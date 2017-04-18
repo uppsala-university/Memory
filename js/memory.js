@@ -300,8 +300,13 @@
     this.numTiles = this.gridX * this.gridY;
     this.halfNumTiles = this.numTiles/2;
     this.newCards = [];
+		var card1, card2;
     for ( var i = 0; i < this.halfNumTiles; i++ ) {
-      this.newCards.push(this.cards[i], this.cards[i]);
+			card1 = { id: this.cards[i].id, img: 'img/photo' + this.cards[i].id + '.png' };
+			card2 = { id: this.cards[i].id, img: 'img/name' + this.cards[i].id + '.png' };
+			
+      this.newCards.push(card1, card2);
+//      this.newCards.push(this.cards[i], this.cards[i]);
     }
     this.newCards = shuffle(this.newCards);
     this.tilesHTML = '';
